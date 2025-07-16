@@ -1,0 +1,32 @@
+import requests
+
+API_KEY = "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"  # Replace with your actual OpenRouter key
+
+def project_gpt(prompt):
+    url = "https://openrouter.ai/api/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "model": "google/gemma-3n-e2b-it:free",
+        "messages": [{"role": "user", "content": prompt}]
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    result = response.json()
+
+    try:
+        return result['choices'][0]['message']['content'].strip()
+    except Exception as e:
+        return f"Error: {result}"
+
+if __name__ == "__main__":
+    while True:
+        user_input = input("User: ")
+        if user_input.lower() == "exit":
+            break
+        response = project_gpt(user_input)
+        print("Chatbot:", response)
+
+
