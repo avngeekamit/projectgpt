@@ -9,7 +9,7 @@ def project_gpt(prompt):
         "Content-Type": "application/json"
     }
     data = {
-        "model": "google/gemma-3n-e2b-it:free",
+        "model": "your_ai_model ",
         "messages": [{"role": "user", "content": prompt}]
     }
 
