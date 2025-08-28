@@ -1,9 +1,9 @@
 import requests
 
-API_KEY = "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"  # Replace with your API key
+API_KEY = "your_api_key"  # Replace with your API key
 
 def project_gpt(prompt):
-    url = "https://openrouter.ai/api/v1/chat/completions"
+    url = "https://openrouter.ai/api/v1/chat/completions #get your ai model and key from open router 
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
