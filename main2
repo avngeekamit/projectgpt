@@ -3,7 +3,7 @@ import requests
 API_KEY = "your_api_key"  # Replace with your API key
 
 def project_gpt(prompt):
-    url = "https://openrouter.ai/api/v1/chat/completions #get your ai model and key from open router 
+    url = "https://openrouter.ai/api/v1/chat/completions" #get your ai model and key from open router 
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json"
